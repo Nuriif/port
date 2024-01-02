@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" "content="#ffffff">
+    <meta name="viewport" content="width=device-width", initial-scale="1">
+    <link rel="shortcut icon" href="images/icon/favicon-16x16.png">
+    <link rel="icon" href="images/icon/android-chrome-192x192.png">
+    <!-- <link rel="icon" href="images/icon/192x192.png"> -->
+    <style>
+        html, body{
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            height: 100%;
+            background: orange;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: #fff;
+        }
+    </style>
+    <script>
+        if('serviceWorker' in navigator){ //navigator로 브라우저나 운영체제등을 파악할 수 있다
+            navigator.serviceWorker.register('./sw.js').then(function(){
+                console.log("서비스 워커가 등록됨");
+            })
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>poppy poppy</h1>
+        <img src="./images/icon/hello-pwa.png" alt="">
+        <p>by 꿈파</p>
+    </div>
+</body>
+</html>
